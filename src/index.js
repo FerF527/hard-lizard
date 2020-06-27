@@ -35,7 +35,16 @@ let index={
         res.end()
     },
     enCartelera:function(res){
-        res.write
+        res.write(enCartelera.titulo + '\n\n');
+        res.write('Total de peliculas: ' + enCartelera.cantidad());
+        res.write('\n\n');
+        let peliculas = enCartelera.listarPelis();
+        for(pelicula of peliculas){
+            res.write(pelicula.title + '\n');
+            res.write(pelicula.overview + '\n\n');
+        }
+        res.end();
+
     },
     masVotadas:function(){
 

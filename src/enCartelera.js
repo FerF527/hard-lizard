@@ -12,8 +12,9 @@ cantidad: function(){
     return this.leerJSON().total_movies
 },
 listarPelis:function(){
-    let movies = this.leerJSON;
-    
+    let movies = this.leerJSON();
+    let peliculas = movies.movies;
+    return peliculas;
 }
 }
 module.exports = enCartelera;
