@@ -18,7 +18,7 @@ let router= function(url,res){
             index.contacto(res)
             break
         case '/preguntas-frecuentes':
-            index.preguntasFrecuentes
+            index.preguntasFrecuentes(res)
             break
         default:
             res.end('404 pagina no encontrada')
