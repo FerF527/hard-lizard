@@ -11,7 +11,7 @@ let router= function(url,res){
         case '/mas-votadas':
             index.masVotadas(res)
             break
-        case '(sucursales':
+        case '/sucursales':
             index.sucursales(res)
             break
         case '/contacto':

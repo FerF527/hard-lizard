@@ -60,11 +60,22 @@ let index={
         }
         res.end();
     },
-    sucursales:function(){
-
+    sucursales : function(res){
+        res.write(sucursales.titulo + '\n');
+        res.write(sucursales.totalSalas() + '\n\n');
+        res.write('Listado de salas.' + '\n\n');
+        let mostrarSucursales = sucursales.listarSalas();
+        for(propiedadSala of mostrarSucursales){
+            res.write('Nombre: ' + propiedadSala.name + '\n');
+            res.write('Direccion: ' + propiedadSala.address + '\n');
+            res.write('Descripción: ' + propiedadSala.description + '\n\n');    
+        }
+        res.end();
     },
-    contacto:function(){
-
+    contacto:function(res){
+        res.write(contacto.titulo + '\n');
+        res.write(contacto.contenido);
+        res.end();
     },
     preguntasFrecuentes:function(){
 
