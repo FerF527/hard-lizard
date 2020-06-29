@@ -46,8 +46,19 @@ let index={
         res.end();
 
     },
-    masVotadas:function(){
-
+    masVotadas:function(res){
+        res.write(masVotadas.titulo + '\n\n');
+        res.write("Total de peliculas: " + masVotadas.cantidadPelis());
+        res.write('\n\n');
+        res.write('Rating promedio. ' + masVotadas.ratingPromedio().toFixed(1) + '\n\n');
+        res.write('Listados de peliculas. \n\n');
+        let mejoresPelis = masVotadas.filtrarPelis();
+        for(pelicula of mejoresPelis){
+            res.write("Título " + pelicula.title + '\n');
+            res.write("Rating " + pelicula.vote_average + '\n');
+            res.write("Reseña " + pelicula.overview + "\n\n");
+        }
+        res.end();
     },
     sucursales:function(){
 
